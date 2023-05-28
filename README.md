@@ -31,10 +31,8 @@ Jalankan perintah berikut untuk menambahkan konfigurasi web app
 ```
 php artisan db:seed --class=ConfigSeeder
 ```
-```
-
-```
 Terakhir, jalankan perintah berikut untuk menyalakan web server bawaan laravel 
+```
 php artisan serve
 ```
 Setelah perintah di atas dijalankan, web app Anda bisa sudah bisa diakses
