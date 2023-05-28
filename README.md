@@ -31,9 +31,6 @@ Jalankan perintah berikut untuk menambahkan konfigurasi web app
 ```
 php artisan db:seed --class=ConfigSeeder
 ```
-
-```
-
 ```
 Terakhir, jalankan perintah berikut untuk menyalakan web server bawaan laravel 
 ```
@@ -41,8 +38,5 @@ php artisan serve
 ```
 Setelah perintah di atas dijalankan, web app Anda bisa sudah bisa diakses
 
-## License / Lisensi
-
-Berlisensi di bawah [MIT license](https://github.com/404NotFoundIndonesia/laravel-surat-menyurat-v1/blob/main/LICENSE).
 # SENTRA-HKI
 # last_hope_hki_ig
