@@ -38,4 +38,3 @@ php artisan serve
 Setelah perintah di atas dijalankan, web app Anda bisa sudah bisa diakses
 
 # SENTRA-HKI
-# last_hope_hki_ig
