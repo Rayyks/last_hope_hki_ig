@@ -38,3 +38,5 @@ php artisan serve
 Setelah perintah di atas dijalankan, web app Anda bisa sudah bisa diakses
 
 # SENTRA-HKI
+
+Pak dosen tolong hargai yaa, saya tau ini aplikasi masi kek sampah, cuman saya backend sendiri, kalo ni aplikasi ga sesuai dengan yang di minta, namanya juga bukan di bidang saya backend pak... Mohon pengertiannya dari antara semua project pbl saya rasa yang paling ribet + rumit + banyak revisinya cuman ini aja deh, soalnya saya liat project pbl orang orang lain kok pada gampang gampang deh :). yk it is what it is lol
