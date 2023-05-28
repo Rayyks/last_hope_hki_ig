@@ -3,7 +3,7 @@
 @section('content')
 @if(auth()->user()->role == 'admin')
 <x-breadcrumb :values="[__('Pengajuan Masuk'), $letter->email, __('Status Pengajuan')]">
-    <a href="{{ route('transaction.disposition.create', $letter) }}" class="btn btn-primary">Buat Status Pengajuan</a>
+    <!-- <a href="{{ route('transaction.disposition.create', $letter) }}" class="btn btn-primary">Buat Status Pengajuan</a> -->
 </x-breadcrumb>
 
 <div class="alert alert-primary alert-dismissible" role="alert">

@@ -80,7 +80,7 @@
                     <div class="d-flex justify-content-between flex-sm-row flex-column gap-3" style="position: relative;">
                         <div class="">
                             <div class="card-title">
-                                <h5 class="text-nowrap mb-2">{{ __('Pengajuan') }}</h5>
+                                <h5 class="text-nowrap mb-2">{{ __('Aktifitas') }}</h5>
                                 <span class="badge bg-label-warning rounded-pill">{{ __('dashboard.today') }}</span>
                             </div>
                             <div class="mt-sm-auto">

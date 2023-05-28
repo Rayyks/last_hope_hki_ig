@@ -7,10 +7,6 @@
                 <h5 class="text-nowrap mb-0 fw-bold">{{ $disposition->status?->status }}</h5>
             </div>
             <div class="card-title d-flex flex-row">
-                <div class="d-inline-block mx-2 text-end text-black">
-                    <small class="d-block text-secondary">{{ __('Tanggal Status dibuat') }}</small>
-                    {{ $disposition->formatted_due_date }}
-                </div>
                 <div class="dropdown d-inline-block">
                     <button class="btn p-0" type="button" id="dropdown-disposition-{{ $disposition->id }}" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="bx bx-dots-vertical-rounded"></i>
@@ -32,11 +28,6 @@
         <p>{{ $disposition->content }}</p>
         <small class="text-secondary">{{ $disposition->note }}</small>
         {{ $slot }}
-        <!-- @if($disposition->status?->status == 'Di Terima')
-        <div class="btn btn-primary" style="margin-left:13.6cm;">
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank" class="text-white">Lihat Sertifikat</a>
-        </div>
-        @endif -->
     </div>
 </div>
 @endif
@@ -48,26 +39,15 @@
         <div class="d-flex justify-content-between flex-column flex-sm-row">
             <div class="card-title">
                 <h5 class="text-nowrap mb-0 fw-bold">{{ $disposition->status?->status }}</h5>
-                <small class="text-black">{{ $disposition->to }}</small>
             </div>
             <div class="card-title d-flex flex-row">
-                <div class="d-inline-block mx-2 text-end text-black">
-                    <small class="d-block text-secondary">{{ __('model.disposition.due_date') }}</small>
-                    {{ $disposition->formatted_due_date }}
-                </div>
             </div>
         </div>
     </div>
     <div class="card-body">
         <hr>
-        <p>{{ $disposition->content }}</p>
         <small class="text-secondary">{{ $disposition->note }}</small>
         {{ $slot }}
-        @if($disposition->status?->status == 'Di Terima')
-        <div class="btn btn-primary" style="margin-left:13.6cm;">
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank" class="text-white">Lihat Sertifikat</a>
-        </div>
-        @endif
     </div>
 </div>
 

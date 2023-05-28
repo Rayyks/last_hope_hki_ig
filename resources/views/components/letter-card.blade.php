@@ -18,7 +18,47 @@
                 </div>
                 @if($letter->type == 'incoming')
                 <div class="mx-3">
-                    <a href="{{ route('transaction.disposition.index', $letter) }}" class="btn btn-primary btn">{{ __('Status Pengajuan') }}</a>
+                    <a href="{{ route('transaction.disposition.index', $letter) }}" class="btn btn-primary btn">{{ __('Lihat Status Pengajuan') }}</a>
+
+                    <!-- BUAT STATUS -->
+                    @php
+                    $statuses = [
+                    (object) ['id' => 1, 'status' => 'Di Terima'],
+                    (object) ['id' => 2, 'status' => 'Di Tolak'],
+                    (object) ['id' => 3, 'status' => 'Belum Lengkap'],
+                    (object) ['id' => 4, 'status' => 'Pending'],
+                    ];
+                    @endphp
+                    <div class="">
+                        <form action="{{ route('transaction.disposition.store', $letter) }}" method="POST">
+                            @csrf
+                            <div class="card-body row">
+                                <div class="col-sm-12 col-12 col-md-6 col-lg-4">
+                                    <div class="mb-3">
+                                        <label for="letter_status" class="form-label">{{ __('model.disposition.status') }}</label>
+                                        <select class="form-select" id="letter_status" name="letter_status">
+                                            @foreach($statuses as $status)
+                                            <option value="{{ $status->id }}" @selected(old('letter_status')==$status->id)>{{ $status->status }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-12 col-md-6 col-lg-8">
+                                    <x-input-form name="note" :label="__('model.disposition.note')" />
+                                </div>
+                            </div>
+                            <div class="card-footer pt-0">
+                                <button class="btn btn-primary" type="submit">{{ __('menu.general.save') }}</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- tampilin status -->
+                    <div class="card-title">
+                        @if(isset($disposition))
+                        <h5 class="text-nowrap mb-0 fw-bold">{{ $disposition->status?->status }}</h5>
+                        @endif
+                    </div>
                 </div>
                 @endif
                 <div class="dropdown d-inline-block">
@@ -124,6 +164,9 @@
                     <i class="bx bxs-file-png display-6 cursor-pointer text-primary"></i>
                     @endif
                 </a>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href="{{ $attachment->path_url }}" target="_blank">{{ $attachment->filename }}</a>
+                </li>
                 @endforeach
             </div>
             @endif

@@ -76,7 +76,7 @@
         </div>
     </form>
 </div>
-<form action="{{ route('attachment.destroy') }}" method="post" id="form-to-remove-attachment">
+<form action="{{ route('attachment.destroy') }}" method="POST" id="form-to-remove-attachment">
     @csrf
     @method('DELETE')
     <input type="hidden" name="id" id="attachment-id-to-remove">
@@ -85,12 +85,16 @@
 
 @push('script')
 <script>
-    $(document).on('click', '.btn-remove-attachment', function(req) {
-        $('input#attachment-id-to-remove').val($(this).data('id'));
+    $(document).on('click', '.btn-remove-attachment', function(event) {
+        event.preventDefault();
+        var attachmentId = $(this).data('id');
+        $('#attachment-id-to-remove').val(attachmentId);
+
         Swal.fire({
             title: '{{ __('
             menu.general.delete_confirm ') }}',
-            text: "{{ __('menu.general.delete_warning') }}",
+            text: '{{ __('
+            menu.general.delete_warning ') }}',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#696cff',
@@ -100,9 +104,9 @@
             menu.general.cancel ') }}'
         }).then((result) => {
             if (result.isConfirmed) {
-                $('form#form-to-remove-attachment').submit();
+                $('#form-to-remove-attachment').submit();
             }
-        })
+        });
     });
 </script>
 @endpush
