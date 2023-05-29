@@ -61,14 +61,14 @@
             <ul class="menu-sub">
                 <li class="menu-item {{ \Illuminate\Support\Facades\Route::is('reference.classification.*') ? 'active' : '' }}">
                     <a href="{{ route('reference.classification.index') }}" class="menu-link">
-                        <div data-i18n="{{ __('menu.reference.classification') }}">{{ __('menu.reference.classification') }}</div>
+                        <div data-i18n="{{ __('menu.reference.classification') }}">{{ __('Jenis Pengajuan') }}</div>
                     </a>
                 </li>
-                <li class="menu-item {{ \Illuminate\Support\Facades\Route::is('reference.status.*') ? 'active' : '' }}">
+                <!-- <li class="menu-item {{ \Illuminate\Support\Facades\Route::is('reference.status.*') ? 'active' : '' }}">
                     <a href="{{ route('reference.status.index') }}" class="menu-link">
-                        <div data-i18n="{{ __('menu.reference.status') }}">{{ __('menu.reference.status') }}</div>
+                        <div data-i18n="{{ __('menu.reference.status') }}">{{ __('Sifat Status') }}</div>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </li>
         <!-- User Management -->
