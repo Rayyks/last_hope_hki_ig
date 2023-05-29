@@ -44,6 +44,6 @@ class GeneralHelper
             $greetingLang = 'night';
         }
 
-        return __( 'dashboard.greeting.' . $greetingLang, ['name' => $name]);
+        return __('dashboard.greeting.' . $greetingLang, ['name' => $name]);
     }
 }

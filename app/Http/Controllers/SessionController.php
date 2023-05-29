@@ -70,15 +70,6 @@ class SessionController extends Controller
             'password' => Hash::make($request->password)
         ];
         User::create($data);
-
-        $infologin = [
-            'email' => $request->email,
-            'password' => $request->password,
-        ];
-        if (Auth::attempt($infologin)) {
-            return redirect('/')->with('Success', Auth::user()->name . 'Berhasil Register');
-        } else {
-            return redirect('sesi')->withErrors('Username dan Password tidak valid');
-        }
+        return redirect('login')->with('Success', 'Berhasil Register');
     }
 }
