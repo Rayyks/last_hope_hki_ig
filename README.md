@@ -31,18 +31,12 @@ Jalankan perintah berikut untuk menambahkan konfigurasi web app
 ```
 php artisan db:seed --class=ConfigSeeder
 ```
-
-```
-
-```
 Terakhir, jalankan perintah berikut untuk menyalakan web server bawaan laravel 
 ```
 php artisan serve
 ```
 Setelah perintah di atas dijalankan, web app Anda bisa sudah bisa diakses
 
-## License / Lisensi
-
-Berlisensi di bawah [MIT license](https://github.com/404NotFoundIndonesia/laravel-surat-menyurat-v1/blob/main/LICENSE).
 # SENTRA-HKI
-# last_hope_hki_ig
+
+Pak dosen tolong hargai yaa, saya tau ini aplikasi masi kek sampah, cuman saya backend sendiri, kalo ni aplikasi ga sesuai dengan yang di minta, namanya juga bukan di bidang saya backend pak... Mohon pengertiannya dari antara semua project pbl saya rasa yang paling ribet + rumit + banyak revisinya cuman ini aja deh, soalnya saya liat project pbl orang orang lain kok pada gampang gampang deh :). yk it is what it is lol
