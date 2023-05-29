@@ -36,6 +36,18 @@
                     </a>
                 </li>
             </ul>
+            <ul class="menu-sub">
+                <li class=" menu-item">
+                    <a class="nav-link dropdown-toggle menu-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item text-white" href="#">Dokumen A</a></li>
+                        <li><a class="dropdown-item text-white" href="#">Dokumen B</a></li>
+                        <li><a class="dropdown-item text-white" href="#">Dokumen C</a></li>
+                    </ul>
+                </li>
+            </ul>
         </li>
 
         @if(auth()->user()->role == 'admin')
