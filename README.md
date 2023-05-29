@@ -23,14 +23,6 @@ Jalankan perintah berikut untuk membuat skema database
 ```
 php artisan migrate
 ```
-Jalankan perintah berikut untuk menambahkan akun (administrator)
-```
-php artisan db:seed --class=UserSeeder
-```
-Jalankan perintah berikut untuk menambahkan konfigurasi web app
-```
-php artisan db:seed --class=ConfigSeeder
-```
 Terakhir, jalankan perintah berikut untuk menyalakan web server bawaan laravel 
 ```
 php artisan serve
