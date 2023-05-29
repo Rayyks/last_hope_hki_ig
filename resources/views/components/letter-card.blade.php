@@ -98,6 +98,9 @@
                     <i class="bx bxs-file-png display-6 cursor-pointer text-primary"></i>
                     @endif
                 </a>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href="{{ $attachment->path_url }}" target="_blank">{{ $attachment->filename }}</a>
+                </li>
                 @endforeach
             </div>
             @endif

@@ -36,6 +36,7 @@
                     </a>
                 </li>
             </ul>
+            @if(auth()->user()->role == 'staff')
             <ul class="menu-sub">
                 <li class=" menu-item">
                     <a class="nav-link dropdown-toggle menu-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -48,6 +49,7 @@
                     </ul>
                 </li>
             </ul>
+            @endif
         </li>
 
         @if(auth()->user()->role == 'admin')

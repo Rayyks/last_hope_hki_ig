@@ -16,7 +16,7 @@
                 <x-input-form name="from" :label="__('model.letter.from')" />
             </div>
             <div class="col-sm-12 col-12 col-md-6 col-lg-4">
-                <x-input-form name="nomor_wa" :label="__('nomor_wa')" />
+                <x-input-form name="nomor_wa" :label="__('nomor_wa')" :value="62" />
             </div>
             <div class="col-sm-12 col-12 col-md-6 col-lg-4">
                 <x-input-form name="nik" :label="__('NIK')" />

@@ -7,7 +7,7 @@
 </x-breadcrumb>
 
 <div class="alert alert-primary alert-dismissible" role="alert">
-    {{ __('model.disposition.notice_me', ['reference_number' => $letter->email]) }} <a href="{{ route('transaction.incoming.show', $letter) }}" class="fw-bold">{{ __('menu.general.view') }}</a>
+    {{ __('Kembali ke') }} <a href="{{ route('transaction.incoming.index', $letter) }}" class="fw-bold">{{ __('Pengajuan Masuk') }}</a>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 
@@ -17,11 +17,12 @@
 
 {!! $data->appends(['search' => $search])->links() !!}
 @endif
+
+
 @if(auth()->user()->role == 'staff')
 <div class="alert alert-primary alert-dismissible" role="alert">
-    {{ __('model.disposition.notice_me', ['reference_number' => $letter->email]) }} <a href="{{ route('transaction.incoming.show', $letter) }}" class="fw-bold">{{ __('menu.general.view') }}</a>
+    {{ __('Kembali ke') }} <a href="{{ route('transaction.incoming.index', $letter) }}" class="fw-bold">{{ __('Pengajuan Masuk') }}</a>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-
 </div>
 
 @foreach($data as $disposition)
