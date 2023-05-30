@@ -39,13 +39,13 @@
             @if(auth()->user()->role == 'staff')
             <ul class="menu-sub">
                 <li class=" menu-item">
-                    <a class="nav-link dropdown-toggle menu-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown
+                    <a class="nav-link dropdown-toggle menu-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="transition: .5s ease-in-out;">
+                        Lampiran HKI
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item text-white" href="#">Dokumen A</a></li>
-                        <li><a class="dropdown-item text-white" href="#">Dokumen B</a></li>
-                        <li><a class="dropdown-item text-white" href="#">Dokumen C</a></li>
+                        <li><a class="dropdown-item text-white" href="{{('pengajuan/form-pendaftaran.pdf')}}">Form Pendaftaran Online</a></li>
+                        <li><a class="dropdown-item text-white" href="#">Pernyataan Hak Cipta</a></li>
+                        <li><a class="dropdown-item text-white" href="#">Surat Pengalihan Hak Cipta</a></li>
                     </ul>
                 </li>
             </ul>
