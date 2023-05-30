@@ -33,6 +33,7 @@ Route::get('/hakPaten', function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/', [\App\Http\Controllers\PageController::class, 'index'])->name('home');
 
+
     Route::resource('user', \App\Http\Controllers\UserController::class)
         ->except(['show', 'edit', 'create'])
         ->middleware(['role:admin']);

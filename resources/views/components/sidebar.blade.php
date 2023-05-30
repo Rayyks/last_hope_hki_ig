@@ -43,9 +43,9 @@
                         Lampiran HKI
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item text-white" href="{{('pengajuan/form-pendaftaran.pdf')}}">Form Pendaftaran Online</a></li>
-                        <li><a class="dropdown-item text-white" href="#">Pernyataan Hak Cipta</a></li>
-                        <li><a class="dropdown-item text-white" href="#">Surat Pengalihan Hak Cipta</a></li>
+                        <li><a class="dropdown-item text-white" target="_blank" href="{{asset('pengajuan/form-pendaftaran.pdf')}}">Form Pendaftaran Online</a></li>
+                        <li><a class="dropdown-item text-white" target="_blank" href="{{asset('pengajuan/Pernyataan_Hak_Cipta.pdf')}}">Pernyataan Hak Cipta</a></li>
+                        <li><a class="dropdown-item text-white" target="_blank" href="{{asset('pengajuan/pengalihan-hak.pdf')}}">Surat Pengalihan </a></li>
                     </ul>
                 </li>
             </ul>

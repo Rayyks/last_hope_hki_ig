@@ -10,10 +10,10 @@
         <div class="card-body row">
             <input type="hidden" name="type" value="incoming">
             <div class="col-sm-12 col-12 col-md-6 col-lg-4">
-                <x-input-form name="email" :label="__('Email')" />
+                <x-input-form name="email" :label="__('Email')" :value="auth()->user()->email" />
             </div>
             <div class="col-sm-12 col-12 col-md-6 col-lg-4">
-                <x-input-form name="from" :label="__('model.letter.from')" />
+                <x-input-form name="from" :label="__('model.letter.from')" :value="auth()->user()->name" />
             </div>
             <div class="col-sm-12 col-12 col-md-6 col-lg-4">
                 <x-input-form name="nomor_wa" :label="__('nomor_wa')" :value="62" />

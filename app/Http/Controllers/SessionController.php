@@ -70,6 +70,7 @@ class SessionController extends Controller
             'password' => Hash::make($request->password)
         ];
         User::create($data);
-        return redirect('login')->with('Success', 'Berhasil Register');
+        // return redirect('login')->with('Success', 'Berhasil Register');
+        return redirect()->route('login')->with('success', __('menu.general.success'));
     }
 }

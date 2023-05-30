@@ -25,10 +25,11 @@
                     $statuses = [
                     (object) ['id' => 1, 'status' => 'Di Terima'],
                     (object) ['id' => 2, 'status' => 'Di Tolak'],
-                    (object) ['id' => 3, 'status' => 'Belum Lengkap'],
-                    (object) ['id' => 4, 'status' => 'Pending'],
+                    (object) ['id' => 3, 'status' => 'Pending'],
+                    (object) ['id' => 4, 'status' => 'Belum Lengkap'],
                     ];
                     @endphp
+                    @if(!$letter->disposition)
                     <div class="">
                         <form action="{{ route('transaction.disposition.store', $letter) }}" method="POST">
                             @csrf
@@ -52,15 +53,19 @@
                             </div>
                         </form>
                     </div>
-
-                    <!-- tampilin status -->
-                    <div class="card-title">
-                        @if(isset($disposition))
-                        <h5 class="text-nowrap mb-0 fw-bold">{{ $disposition->status?->status }}</h5>
-                        @endif
+                    @else
+                    <div class="mt-3">
+                        <p>Form already submitted.</p>
+                        <!-- OR -->
+                        <div class="alert alert-info" role="alert">
+                            Form has already been submitted and cannot be submitted again.
+                        </div>
                     </div>
+                    @endif
+
                 </div>
                 @endif
+
                 <div class="dropdown d-inline-block">
                     <button class="btn p-0" type="button" id="dropdown-{{ $letter->type }}-{{ $letter->id }}" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="bx bx-dots-vertical-rounded"></i>
@@ -110,7 +115,7 @@
 </div>
 @endif
 
-@if(auth()->user()->role == 'staff')
+@if(auth()->user()->role == 'staff' && auth()->user()->email == $letter->email)
 <div class="card mb-4">
     <div class="card-header pb-0">
         <div class="d-flex justify-content-between flex-column flex-sm-row">

@@ -72,6 +72,12 @@
                         </a>
                     </div>
 
+                    @if (session('success'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+
                     <form id="formAuthentication" class="mb-3" action="/sesi/create" method="POST">
                         @csrf
                         <div class="mb-3">
