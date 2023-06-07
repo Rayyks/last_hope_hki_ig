@@ -254,8 +254,8 @@
                     <div class="col-md-6">
                         <div class="info-box">
                             <i class="bi bi-clock"></i>
-                            <h3>Jaaskjhnegoeiuh</h3>
-                            <p>Senin - senin depan<br />00:99 - 117:100</p>
+                            <h3>Jadwal</h3>
+                            <p>Senin - Jumat<br />09:00 - 17:00</p>
                         </div>
                     </div>
 

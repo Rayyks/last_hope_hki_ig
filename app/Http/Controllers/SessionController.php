@@ -9,32 +9,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
+
 class SessionController extends Controller
 {
     function index()
     {
         return view('sesi/index');
-    }
-    function login(Request $request)
-    {
-        Session::flash('email', $request->email);
-        $request->validate([
-            'email' => 'required',
-            'password' => 'required'
-        ], [
-            'email.required' => 'Email Tidak Boleh Kosong',
-            'password.required' => 'Password Tidak Boleh Kosong',
-        ]);
-
-        $infologin = [
-            'email' => $request->email,
-            'password' => $request->password,
-        ];
-        if (Auth::attempt($infologin)) {
-            return redirect('/')->with('Success', 'Berhasil');
-        } else {
-            return redirect('sesi')->withErrors('Username dan Password tidak valid');
-        }
     }
 
     function logout()
@@ -51,10 +31,13 @@ class SessionController extends Controller
     {
         Session::flash('name', $request->name);
         Session::flash('email', $request->email);
+        Session::flash('phone', $request->phone);
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:6'
+            'password' => 'required|min:6',
+            'phone' => 'required',
+            'nim' => 'required',
         ], [
             'name.required' => 'Nama Wajib diisi',
             'email.required' => 'Email Wajib diisi',
@@ -62,15 +45,25 @@ class SessionController extends Controller
             'email.unique' => 'Email sudah digunakan oleh user lain, silahkan gunakan email yang lain',
             'password.required' => 'Password Wajib diisi',
             'password.min' => 'Minimum password yang diizinkan adalah 6 karakter',
+            'phone.required' => 'Nomor Wa Wajib diisi',
+            'nim.required' => 'NIM Wajib diisi',
         ]);
 
         $data = [
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password)
+            'password' => Hash::make($request->password),
+            'phone' => ($request->phone),
+            'nim' => ($request->nim),
+
         ];
         User::create($data);
-        // return redirect('login')->with('Success', 'Berhasil Register');
+
         return redirect()->route('login')->with('success', __('menu.general.success'));
+    }
+
+    public function changePassword()
+    {
+        return view('sesi/change-password');
     }
 }

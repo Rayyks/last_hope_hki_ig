@@ -22,7 +22,8 @@ class DispositionController extends Controller
      */
     public function index(Request $request, Letter $letter): View
     {
-        return view('pages.transaction.disposition.index', [
+
+        return view('pages.transaction.incoming.index', [
             'data' => Disposition::render($letter, $request->search),
             'letter' => $letter,
             'search' => $request->search,
@@ -58,7 +59,7 @@ class DispositionController extends Controller
             $newDisposition['letter_id'] = $letter->id;
             Disposition::create($newDisposition);
             return redirect()
-                ->route('transaction.disposition.index', $letter)
+                ->route('transaction.incoming.index', $letter)
                 ->with('success', __('menu.general.success'));
         } catch (\Throwable $exception) {
             return back()->with('error', $exception->getMessage());

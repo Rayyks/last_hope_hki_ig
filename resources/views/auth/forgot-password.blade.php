@@ -27,7 +27,7 @@
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>{{ __('Register') }} | {{ config('app.name') }}</title>
+    <title>{{ __('menu.auth.login') }} | {{ config('app.name') }}</title>
 
     <meta name="description" content=""/>
 
@@ -65,69 +65,50 @@
             <div class="card">
                 <div class="card-body">
                     <!-- Logo -->
-                    <h1 class="text-center text-dark">Register</h1>
+                    <div>
+                        <a href="/index" >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="36" fill="currentColor" class="bi bi-arrow-left-square-fill" viewBox="0 0 16 16">
+                            <path d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <h1 class="text-center text-dark">Reset Password</h1>
                     <div class="app-brand justify-content-center">
                         <a href="{{ route('home') }}" class="app-brand-link gap-2">
                             <img src="https://www.polibatam.ac.id/wp-content/uploads/2021/09/logo.png" alt="{{ config('app.name') }}" srcset="" width="75px">
                         </a>
                     </div>
-
-
-                    <form id="formAuthentication" class="mb-3" action="/sesi/create" method="POST">
+                    <div>
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
+                        @if (session()->has('status'))
+                        <div class="alert alert-success">
+                            {{ session()->get('status') }}
+                        </div>
+                        @endif
+                    </div>
+                    <h3 class="text-center">Lupa password?</h3>
+                    <p class="text-center">Tolong masukan email atau password reset request</p>
+                    <form id="formAuthentication" class="mb-3" action="{{route('password.email')}}" method="post">
                         @csrf
                         <div class="mb-3">
-                            <x-input-form
-                                name="name"
-                                type="text"
-                                :label="__('Nama')"
-                                value="{{Session::get('name')}}"
-                            />
-                        </div>
-                        <div class="mb-3">
-                            <x-input-form
-                                name="email"
-                                type="email"
-                                :label="__('Email')"
-                                value="{{Session::get('email')}}"
-                            />
-                        </div>
-                        <div class="mb-3">
-                            <x-input-form
-                                name="password"
-                                type="password"
-                                :label="__('model.user.password')"
-                            />
-                        </div>
-                        <div class="mb-3">
-                            <x-input-form
-                                name="phone"
-                                type="tel"
-                                :label="__('Nomor Wa')"
-                            />
-                        </div>
-                        <div class="mb-3">
-                            <x-input-form
-                                name="nim"
-                                type="text"
-                                :label="__('NIM')"
-                            />
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" name="email">
                         </div>
                         <div class="mt-2">
-                            <button class="btn btn-primary d-grid w-100" type="submit">{{ __('Register') }}</button>
+                            <input type="submit" value="Request Password Reset" class="btn btn-primary d-grid w-100">
                         </div>
                     </form>
-
-                    @if(session('success'))
-                        <div class="alert alert-success mt-3">
-                            {{ session('success') }}
-                        </div>
-                    @endif
-                    <div>
-                        <a href="{{route('login')}}">Sudah punya akun?, login di sini</a>
-                    </div>
                 </div>
             </div>
-            <!-- /Register -->
+            <!-- /forgot -->
         </div>
     </div>
 </div>

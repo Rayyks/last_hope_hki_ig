@@ -16,10 +16,10 @@
                 <x-input-form name="from" :label="__('model.letter.from')" :value="auth()->user()->name" />
             </div>
             <div class="col-sm-12 col-12 col-md-6 col-lg-4">
-                <x-input-form name="nomor_wa" :label="__('nomor_wa')" :value="62" />
+                <x-input-form name="nomor_wa" :label="__('nomor_wa')" :value="auth()->user()->phone" />
             </div>
             <div class="col-sm-12 col-12 col-md-6 col-lg-4">
-                <x-input-form name="nik" :label="__('NIK')" />
+                <x-input-form name="nik" :label="__('NIk')" :value="auth()->user()->nim " />
             </div>
             <div class="col-sm-12 col-12 col-md-6 col-lg-4">
                 <x-input-form name="kkt" :label="__('KKT')" />
