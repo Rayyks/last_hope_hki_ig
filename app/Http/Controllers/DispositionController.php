@@ -22,8 +22,7 @@ class DispositionController extends Controller
      */
     public function index(Request $request, Letter $letter): View
     {
-
-        return view('pages.transaction.incoming.index', [
+        return view('pages.transaction.disposition.index', [
             'data' => Disposition::render($letter, $request->search),
             'letter' => $letter,
             'search' => $request->search,
@@ -38,9 +37,10 @@ class DispositionController extends Controller
      */
     public function create(Letter $letter): View
     {
+        $statuses = LetterStatus::all();
         return view('pages.transaction.disposition.create', [
             'letter' => $letter,
-            'statuses' => LetterStatus::all(),
+            'statuses' => $statuses,
         ]);
     }
 
@@ -58,8 +58,11 @@ class DispositionController extends Controller
             $newDisposition['user_id'] = auth()->user()->id;
             $newDisposition['letter_id'] = $letter->id;
             Disposition::create($newDisposition);
+
+            session()->flash('form_submitted', true);
+
             return redirect()
-                ->route('transaction.incoming.index', $letter)
+                ->route('transaction.disposition.index', $letter)
                 ->with('success', __('menu.general.success'));
         } catch (\Throwable $exception) {
             return back()->with('error', $exception->getMessage());

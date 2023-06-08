@@ -18,7 +18,7 @@
                 </div>
                 @if($letter->type == 'incoming')
                 <div class="mx-3">
-
+                    <a href="{{ route('transaction.disposition.index', $letter) }}" class="btn btn-primary btn">{{ __('Lihat Status Pengajuan') }}</a>
 
                     <!-- BUAT STATUS -->
                     @php
@@ -52,6 +52,14 @@
                                 <button class="btn btn-primary" type="submit">{{ __('menu.general.save') }}</button>
                             </div>
                         </form>
+                    </div>
+                    @else
+                    <div class="mt-3">
+                        <p>Form already submitted.</p>
+                        <!-- OR -->
+                        <div class="alert alert-info" role="alert">
+                            Form has already been submitted and cannot be submitted again.
+                        </div>
                     </div>
                     @endif
 

@@ -19,7 +19,7 @@ class InputForm extends Component
         $this->name = $name;
         $this->label = $label;
         $this->type = $type;
-        $this->value = $value ?? '';
+        $this->value = $value;
     }
 
     /**
