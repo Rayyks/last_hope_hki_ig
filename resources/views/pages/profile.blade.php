@@ -85,6 +85,12 @@
                         <div class="col-md-6">
                             <x-input-form name="phone" :label="__('model.user.phone')" :value="$data->phone" />
                         </div>
+                        <div class="col-md-6">
+                            <x-input-form name="password" :label="__('model.user.password')" type="password" />
+                        </div>
+                        <div class="col-md-6">
+                            <x-input-form name="password_confirmation" :label="__('Konfirmasi kata sandi')" type="password" />
+                        </div>
                     </div>
                     <div class="mt-2">
                         <button type="submit" class="btn btn-primary me-2">{{ __('menu.general.update') }}</button>

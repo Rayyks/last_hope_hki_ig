@@ -15,7 +15,8 @@
 
 @foreach($data as $letter)
 <x-letter-card :letter="$letter" />
-@endforeach
 
+
+@endforeach
 {!! $data->appends(['search' => $search])->links() !!}
 @endsection

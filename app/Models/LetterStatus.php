@@ -16,7 +16,7 @@ class LetterStatus extends Model
 
     public function scopeSearch($query, $search)
     {
-        return $query->when($search, function($query, $find) {
+        return $query->when($search, function ($query, $find) {
             return $query
                 ->where('status', 'LIKE', $find . '%');
         });

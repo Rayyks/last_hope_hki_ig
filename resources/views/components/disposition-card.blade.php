@@ -1,5 +1,4 @@
 @if(auth()->user()->role == 'admin')
-
 <div class="card mb-4">
     <div class="card-header pb-0">
         <div class="d-flex justify-content-between flex-column flex-sm-row">
@@ -33,7 +32,6 @@
 @endif
 
 @if(auth()->user()->role == 'staff')
-
 <div class="card mb-4">
     <div class="card-header pb-0">
         <div class="d-flex justify-content-between flex-column flex-sm-row">
@@ -50,5 +48,4 @@
         {{ $slot }}
     </div>
 </div>
-
 @endif

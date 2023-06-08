@@ -68,10 +68,15 @@
                     <h1 class="text-center text-dark">Register</h1>
                     <div class="app-brand justify-content-center">
                         <a href="{{ route('home') }}" class="app-brand-link gap-2">
-                            <img src="https://www.polibatam.ac.id/wp-content/uploads/2021/09/logo.png" alt="{{ config('app.name') }}" srcset="" width="75px">
+                            <img src="{{ asset('logo-black.png') }}" alt="{{ config('app.name') }}" srcset="" width="75px">
                         </a>
                     </div>
 
+                    @if (session('success'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('success') }}
+                            </div>
+                        @endif
 
                     <form id="formAuthentication" class="mb-3" action="/sesi/create" method="POST">
                         @csrf
@@ -102,26 +107,13 @@
                             <x-input-form
                                 name="phone"
                                 type="tel"
-                                :label="__('Nomor Wa')"
-                            />
-                        </div>
-                        <div class="mb-3">
-                            <x-input-form
-                                name="nim"
-                                type="text"
-                                :label="__('NIM')"
+                                :label="__('Nomor WA / HP')"
                             />
                         </div>
                         <div class="mt-2">
                             <button class="btn btn-primary d-grid w-100" type="submit">{{ __('Register') }}</button>
                         </div>
                     </form>
-
-                    @if(session('success'))
-                        <div class="alert alert-success mt-3">
-                            {{ session('success') }}
-                        </div>
-                    @endif
                     <div>
                         <a href="{{route('login')}}">Sudah punya akun?, login di sini</a>
                     </div>
