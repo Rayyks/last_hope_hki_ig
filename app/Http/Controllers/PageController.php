@@ -17,6 +17,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use JetBrains\PhpStorm\NoReturn;
 
@@ -79,13 +80,16 @@ class PageController extends Controller
                     $url = parse_url($oldPicture, PHP_URL_PATH);
                     Storage::delete(str_replace('/storage', 'public', $url));
                 }
-
                 //                UPLOAD NEW PICTURE
                 $filename = time() .
                     '-' . $request->file('profile_picture')->getFilename() .
                     '.' . $request->file('profile_picture')->getClientOriginalExtension();
                 $request->file('profile_picture')->storeAs('public/avatars', $filename);
                 $newProfile['profile_picture'] = asset('storage/avatars/' . $filename);
+            }
+            // Perbarui password jika ada perubahan
+            if ($request->filled('password')) {
+                $newProfile['password'] = Hash::make($request->input('password'));
             }
             auth()->user()->update($newProfile);
             return back()->with('success', __('menu.general.success'));
