@@ -19,7 +19,7 @@
                 <x-input-form name="nomor_wa" :label="__('nomor_wa')" :value="auth()->user()->phone" />
             </div>
             <div class="col-sm-12 col-12 col-md-6 col-lg-4">
-                <x-input-form name="nik" :label="__('NIK/NIM')" />
+                <x-input-form name="nik" :label="__('NIK')" />
             </div>
             <div class="col-sm-12 col-12 col-md-6 col-lg-4">
                 <x-input-form name="kkt" :label="__('KKT')" />
