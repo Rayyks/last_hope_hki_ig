@@ -3,7 +3,7 @@
 
 
 @section('content')
-<x-breadcrumb :values="[__('menu.reference.menu'), __('menu.reference.classification')]">
+<x-breadcrumb :values="[__('menu.reference.menu'), __('Jenis Pengajuan')]">
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">
         {{ __('menu.general.create') }}
     </button>
