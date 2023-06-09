@@ -22,9 +22,15 @@ class SessionController extends Controller
             'email' => 'required',
             'password' => 'required'
         ], [
+<<<<<<< HEAD
                 'email.required' => 'Email Tidak Boleh Kosong',
                 'password.required' => 'Password Tidak Boleh Kosong',
             ]);
+=======
+            'email.required' => 'Email Tidak Boleh Kosong',
+            'password.required' => 'Password Tidak Boleh Kosong',
+        ]);
+>>>>>>> 5eb218676ce0a951e4cdd224d0603b053a2897f3
 
         $infologin = [
             'email' => $request->email,
@@ -54,6 +60,7 @@ class SessionController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
+<<<<<<< HEAD
             'password' => 'required|min:6',
             'phone' => 'required'
         ], [
@@ -65,6 +72,19 @@ class SessionController extends Controller
                 'password.required' => 'Password Wajib diisi',
                 'password.min' => 'Minimum password yang diizinkan adalah 6 karakter',
             ]);
+=======
+            'phone' => 'required',
+            'password' => 'required|min:6'
+        ], [
+            'name.required' => 'Nama Wajib diisi',
+            'email.required' => 'Email Wajib diisi',
+            'email.email' => 'Silahkan masukan email yang valid',
+            'email.unique' => 'Email sudah digunakan oleh user lain, silahkan gunakan email yang lain',
+            'phone.required' => 'Nomor WA / HP Wajib diisi',
+            'password.required' => 'Password Wajib diisi',
+            'password.min' => 'Minimum password yang diizinkan adalah 6 karakter',
+        ]);
+>>>>>>> 5eb218676ce0a951e4cdd224d0603b053a2897f3
 
         $data = [
             'name' => $request->name,
@@ -76,4 +96,8 @@ class SessionController extends Controller
         // return redirect('login')->with('Success', 'Berhasil Register');
         return redirect()->route('login')->with('success', __('menu.general.success'));
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 5eb218676ce0a951e4cdd224d0603b053a2897f3

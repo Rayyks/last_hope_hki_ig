@@ -28,6 +28,7 @@ $statuses = [
                 @if($letter->type == 'incoming')
                 <div class="mx-3">
 
+
                     <!-- BUAT STATUS -->
                     <div class="mx-3">
                         @if($letter->status == 'Di Terima')
@@ -73,16 +74,7 @@ $statuses = [
                             <button type="submit" class="btn btn-primary mt-2">Update Status</button>
                         </form>
                     </div>
-
-
-
-                    <!-- BUAT STATUS-->
-
-
-
-
-
-
+                    @endif
 
                 </div>
                 @endif

@@ -29,7 +29,7 @@
             <dt class="col-sm-3">{{ __('KKT') }}</dt>
             <dd class="col-sm-9">{{ $data->kkt }}</dd>
 
-            <dt class="col-sm-3">{{ __('Nama Ketua') }}</dt>
+            <dt class="col-sm-3">{{ __('Nama Ketua Pengusul') }}</dt>
             <dd class="col-sm-9">{{ $data->nama_ketua }}</dd>
 
             <dt class="col-sm-3">{{ __('model.classification.code') }}</dt>

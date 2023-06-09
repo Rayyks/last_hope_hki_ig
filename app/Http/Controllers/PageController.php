@@ -80,7 +80,6 @@ class PageController extends Controller
                     $url = parse_url($oldPicture, PHP_URL_PATH);
                     Storage::delete(str_replace('/storage', 'public', $url));
                 }
-
                 //                UPLOAD NEW PICTURE
                 $filename = time() .
                     '-' . $request->file('profile_picture')->getFilename() .

@@ -19,7 +19,11 @@
                 <x-input-form name="nomor_wa" :label="__('nomor_wa')" :value="auth()->user()->phone" />
             </div>
             <div class="col-sm-12 col-12 col-md-6 col-lg-4">
+<<<<<<< HEAD
                 <x-input-form name="nik" :label="__('NIK/NIM')" />
+=======
+                <x-input-form name="nik" :label="__('NIK')" />
+>>>>>>> 5eb218676ce0a951e4cdd224d0603b053a2897f3
             </div>
             <div class="col-sm-12 col-12 col-md-6 col-lg-4">
                 <x-input-form name="kkt" :label="__('KKT')" />
@@ -53,6 +57,7 @@
             </div>
             <div class="col-sm-12 col-12 col-md-6 col-lg-4">
                 <div class="mb-3">
+<<<<<<< HEAD
                     <label for="attachments" class="form-label">{{ __('Lampiran Form Pendaftaran') }}</label>
                     <input type="file" class="form-control @error('attachments') is-invalid @enderror" id="attachments" name="attachments[]" multiple />
                 </div>
@@ -72,6 +77,9 @@
             <div class="col-sm-12 col-12 col-md-6 col-lg-4">
                 <div class="mb-3">
                     <label for="attachments" class="form-label">{{ __('Lampiran Karya') }}</label>
+=======
+                    <label for="attachments" class="form-label">{{ __('Dokumen yang berkaitan dengan HKI') }}</label>
+>>>>>>> 5eb218676ce0a951e4cdd224d0603b053a2897f3
                     <input type="file" class="form-control @error('attachments') is-invalid @enderror" id="attachments" name="attachments[]" multiple />
                 </div>
             </div>

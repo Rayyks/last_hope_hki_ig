@@ -107,7 +107,11 @@
                             <x-input-form
                                 name="phone"
                                 type="tel"
+<<<<<<< HEAD
                                 :label="__('Nomor WA / HP')"
+=======
+                                :label="__('Nomor Wa / Telpon')"
+>>>>>>> 5eb218676ce0a951e4cdd224d0603b053a2897f3
                             />
                         </div>
                         <div class="mt-2">
