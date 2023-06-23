@@ -89,7 +89,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 hero-img" data-aos="fade-left" data-aos-delay="200">
+                <div class="col-lg-6 hero-img animated-element" data-aos="fade-up" data-aos-delay="200">
                     <img src="assets/img/hero-img.png" class="img-fluid" alt="" />
                 </div>
             </div>
@@ -252,7 +252,7 @@
             <div class="container">
                 <div class="row gy-4">
                     <div class="col-lg-5 col-md-12 footer-info">
-                        <a href="index.html" class="logo d-flex align-items-center">
+                        <a href="#" class="logo d-flex align-items-center" style="pointer-events: none;">
                             <img src="assets/img/logo.png" alt="" />
                             <span>Sentra<b>HKI</b></span>
                         </a>
@@ -270,17 +270,17 @@
                         <h4>Halaman</h4>
                         <ul>
                             <li>
-                                <i class="bi bi-chevron-right"></i> <a href="#">Beranda</a>
+                                <i class="bi bi-chevron-right"></i> <a href="#hero">Beranda</a>
                             </li>
                             <li>
                                 <i class="bi bi-chevron-right"></i>
-                                <a href="#">Tentang SentraHKI</a>
+                                <a href="#about">Tentang SentraHKI</a>
                             </li>
                             <li>
-                                <i class="bi bi-chevron-right"></i> <a href="#">Layanan</a>
+                                <i class="bi bi-chevron-right"></i> <a href="#services">Layanan</a>
                             </li>
                             <li>
-                                <i class="bi bi-chevron-right"></i> <a href="#">Kontak</a>
+                                <i class="bi bi-chevron-right"></i> <a href="#contact">Kontak</a>
                             </li>
                         </ul>
                     </div>
@@ -290,15 +290,15 @@
                         <ul>
                             <li>
                                 <i class="bi bi-chevron-right"></i>
-                                <a href="#">Pendaftaran Hak Cipta</a>
+                                <a href="hakCipta">Pendaftaran Hak Cipta</a>
                             </li>
                             <li>
                                 <i class="bi bi-chevron-right"></i>
-                                <a href="#">Pendaftaran Merek Dagang</a>
+                                <a href="/hakPaten">Pendaftaran Paten</a>
                             </li>
                             <li>
                                 <i class="bi bi-chevron-right"></i>
-                                <a href="#">Pendaftaran Paten</a>
+                                <a href="/manual">Manual Book</a>
                             </li>
                         </ul>
                     </div>

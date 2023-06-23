@@ -52,7 +52,7 @@ class StoreLetterRequest extends FormRequest
             'to' => [Rule::requiredIf($this->type == LetterType::OUTGOING->type())],
             'type' => ['required'],
             'email' => ['required', Rule::unique('letters')],
-            'received_date' => [Rule::requiredIf($this->type == LetterType::INCOMING->type())],
+            'received_date' => ['required'],
             'letter_date' => ['required'],
             'description' => ['required'],
             'note' => ['nullable'],

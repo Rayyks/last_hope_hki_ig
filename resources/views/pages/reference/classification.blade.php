@@ -90,7 +90,7 @@
 <!-- Edit Modal -->
 <div class="modal fade" id="editModal" data-bs-backdrop="static" tabindex="-1">
     <div class="modal-dialog">
-        <form class="modal-content" method="post" action="">
+        <form class="modal-content" method="post" action="{{ route('reference.classification.update', $classification) }}">
             @csrf
             @method('PUT')
             <div class="modal-header">
@@ -100,8 +100,8 @@
             <div class="modal-body">
                 <input type="hidden" name="id" id="id" value="">
                 <x-input-form name="code" :label="__('model.classification.code')" />
-                <x-input-form name="type" :label="__('model.classification.type')" />
-                <x-input-form name="description" :label="__('model.classification.description')" />
+                <x-input-form name="type" :label="__('model.classification.type')" :value="$classification->type" />
+                <x-input-form name="description" :label="__('model.classification.description')" :value="$classification->description" />
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">

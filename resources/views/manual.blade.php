@@ -133,46 +133,6 @@
             <div class="container">
                 <div class="row gy-4">
 
-
-                    <div class="col-lg-2 col-6 footer-links">
-                        <h4>Halaman</h4>
-                        <ul>
-                            <li>
-                                <i class="bi bi-chevron-right"></i> <a href="#">Beranda</a>
-                            </li>
-                            <li>
-                                <i class="bi bi-chevron-right"></i>
-                                <a href="#about">Tentang SentraHKI</a>
-                            </li>
-                            <li>
-                                <i class="bi bi-chevron-right"></i>
-                                <a href="#services">Layanan</a>
-                            </li>
-                            <li>
-                                <i class="bi bi-chevron-right"></i>
-                                <a href="#contact">Kontak</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-2 col-6 footer-links">
-                        <h4>Layanan Kami</h4>
-                        <ul>
-                            <li>
-                                <i class="bi bi-chevron-right"></i>
-                                <a href="#">Pendaftaran Hak Cipta</a>
-                            </li>
-                            <li>
-                                <i class="bi bi-chevron-right"></i>
-                                <a href="#">Pendaftaran Merek Dagang</a>
-                            </li>
-                            <li>
-                                <i class="bi bi-chevron-right"></i>
-                                <a href="#">Pendaftaran Paten</a>
-                            </li>
-                        </ul>
-                    </div>
-
                     <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
                         <h4>Hubungi Kami</h4>
                         <p>

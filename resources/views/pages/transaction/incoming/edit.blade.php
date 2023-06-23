@@ -21,7 +21,7 @@
                 <x-input-form :value="$data->nomor_wa" name="nomor_wa" :label="__('Nomor_WA')" />
             </div>
             <div class="col-sm-12 col-12 col-md-6 col-lg-4">
-                <x-input-form :value="$data->nikOrnim" name="nikOrnim" :label="__('NIK / NIM')" />
+                <x-input-form :value="$data->nik" name="nik" :label="__('NIK / NIM')" />
             </div>
             <div class="col-sm-12 col-12 col-md-6 col-lg-4">
                 <x-input-form :value="$data->kkt" name="kkt" :label="__('KKT')" />

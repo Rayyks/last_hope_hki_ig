@@ -51,7 +51,7 @@ class UpdateLetterRequest extends FormRequest
             'from' => [Rule::requiredIf($this->type == LetterType::INCOMING->type())],
             'to' => [Rule::requiredIf($this->type == LetterType::OUTGOING->type())],
             'email' => ['required', Rule::unique('letters', 'email')->ignore($this->id)],
-            'received_date' => [Rule::requiredIf($this->type == LetterType::INCOMING->type())],
+            'received_date' => ['required'],
             'letter_date' => ['required'],
             'description' => ['required'],
             'note' => ['nullable'],

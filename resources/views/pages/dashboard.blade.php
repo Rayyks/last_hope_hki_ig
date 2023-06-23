@@ -110,9 +110,6 @@
             </div>
 
             <div class="col-lg-6 col-md-12 col-6 mb-4">
-                <x-dashboard-card-simple :label="__('Respons Pengajuan')" :value="$todayDispositionLetter" :daily="true" color="primary" icon="bx-envelope" :percentage="$percentageDispositionLetter" />
-            </div>
-            <div class="col-lg-6 col-md-12 col-6 mb-4">
                 <x-dashboard-card-simple :label="__('dashboard.active_user')" :value="$activeUser" :daily="false" color="info" icon="bx-user-check" :percentage="0" />
             </div>
         </div>

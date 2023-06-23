@@ -63,6 +63,7 @@ $statuses = [
                             @csrf
                             <input type="hidden" name="letter_id" value="{{ $letter->id }}">
                             <select name="status" class="form-select">
+                                <option value="" class="text-center">==== Pilih Status ====</option>
                                 @foreach($statuses as $status)
                                 <option value="{{ $status->id }}" {{ $status->id == $letter->status ? 'selected' : '' }}>
                                     {{ $status->status }}
@@ -159,7 +160,22 @@ $statuses = [
                 <dd class="col-sm-9">{{ $letter->nama_ketua }}</dd>
 
                 <dt class="col-sm-3">{{ __('Nama Anggota') }}</dt>
-                <dd class="col-sm-9">{{ $letter->anggota }}</dd>
+                <dd class="col-sm-9">
+                    @if ($letter->nama_anggota)
+                    {{ $letter->nama_anggota }}
+                    @else
+                    Belum di isi / Tidak ada
+                    @endif
+                </dd>
+
+                <dt class="col-sm-3">{{ __('Email Anggota') }}</dt>
+                <dd class="col-sm-9">
+                    @if ($letter->email_anggota)
+                    {{ $letter->email_anggota }}
+                    @else
+                    Belum di isi / Tidak ada
+                    @endif
+                </dd>
 
                 <dt class="col-sm-3">{{ __('model.classification.code') }}</dt>
                 <dd class="col-sm-9">{{ $letter->classification_code }}</dd>
@@ -182,7 +198,8 @@ $statuses = [
 </div>
 @endif
 
-@if(auth()->user()->role == 'staff' && auth()->user()->email == $letter->email)
+@if(auth()->user()->role == 'staff' && auth()->user()->id == $letter->user_id)
+
 <div class="card mb-4">
     <div class="card-header pb-0">
         <div class="d-flex justify-content-between flex-column flex-sm-row">

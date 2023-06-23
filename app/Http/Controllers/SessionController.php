@@ -52,6 +52,6 @@ class SessionController extends Controller
 
         Toastr::success('Registrasi Berhasil! Silahkan Melakukan log in.');
 
-        return back();
+        return redirect('login');
     }
 }

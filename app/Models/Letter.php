@@ -29,6 +29,7 @@ class Letter extends Model
         'from',
         'to',
         'letter_date',
+        'received_date',
         'description',
         'note',
         'type',
@@ -41,6 +42,7 @@ class Letter extends Model
      */
     protected $casts = [
         'letter_date' => 'date',
+        'received_date' => 'date',
     ];
 
     protected $appends = [

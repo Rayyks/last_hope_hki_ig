@@ -56,9 +56,20 @@ class IncomingLetterController extends Controller
             $user = auth()->user();
 
             if ($request->type != LetterType::INCOMING->type()) throw new \Exception(__('menu.transaction.incoming_letter'));
+
+            // Validasi tanggal karya dibuat tidak lebih maju dari tanggal pengajuan
+            $receivedDate = \Carbon\Carbon::createFromFormat('Y-m-d', $request->received_date);
+            $letterDate = \Carbon\Carbon::createFromFormat('Y-m-d', $request->letter_date);
+
+            if ($receivedDate > $letterDate) {
+                return back()->withInput()->with('error', __('Tanggal karya dibuat tidak bisa lebih duluan dari tanggal pengajuan'));
+            }
+
             $newLetter = $request->validated();
             $newLetter['user_id'] = $user->id;
             $letter = Letter::create($newLetter);
+            // menepatkan data old input 
+            $request->flash();
             // Tambahan kode untuk menyimpan nilai "nama_anggota" dan "email_anggota"
             $letter->nama_anggota = $request->nama_anggota;
             $letter->email_anggota = $request->email_anggota;
@@ -123,6 +134,13 @@ class IncomingLetterController extends Controller
     public function update(UpdateLetterRequest $request, Letter $incoming): RedirectResponse
     {
         try {
+            // Validasi tanggal karya dibuat tidak lebih maju dari tanggal pengajuan
+            $receivedDate = \Carbon\Carbon::createFromFormat('Y-m-d', $request->received_date);
+            $letterDate = \Carbon\Carbon::createFromFormat('Y-m-d', $request->letter_date);
+
+            if ($receivedDate > $letterDate) {
+                return back()->withInput()->with('error', __('Tanggal karya dibuat tidak bisa lebih duluan dari tanggal pengajuan'));
+            }
             $incoming->update($request->validated());
             $incoming->nama_anggota = $request->nama_anggota;
             $incoming->email_anggota = $request->email_anggota;
@@ -142,7 +160,7 @@ class IncomingLetterController extends Controller
                     ]);
                 }
             }
-            return back()->with('success', __('Pengajuan Berhasil di Perbarui'));
+            return redirect()->route('transaction.incoming.index', $incoming)->with('success', __('Pengajuan Berhasil di Perbarui'));
         } catch (\Throwable $exception) {
             return back()->with('error', $exception->getMessage());
         }
