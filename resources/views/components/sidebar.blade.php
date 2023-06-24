@@ -1,8 +1,8 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
         <a href="{{ route('home') }}" class="app-brand-link">
-            <img src="{{ asset('logo-black.png') }}" alt="{{ config('app.name') }}" width="55">
-            <span class="app-brand-text demo text-black fw-bolder ms-2">Sentra Hki</span>
+            <img src="{{ asset('logo-black.png') }}" width="45">
+            <span class="app-brand-text demo text-black fw-bolder " style="text-transform: uppercase;">SENTRA HKI</span>
         </a>
 
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">

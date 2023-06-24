@@ -89,8 +89,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 hero-img animated-element" data-aos="fade-up" data-aos-delay="200">
-                    <img src="assets/img/hero-img.png" class="img-fluid" alt="" />
+                <div class="col-lg-6 hero-img animated-element" data-aos="fade-left" data-aos-delay="200">
+                    <img src="assets/img/main.svg" class="img-fluid" alt="" />
                 </div>
             </div>
         </div>
@@ -135,18 +135,6 @@
             </div>
         </section>
         <!-- End About Section -->
-
-        <!-- ======= Values Section ======= -->
-
-        <!-- End Values Section -->
-
-        <!-- ======= Counts Section ======= -->
-
-        <!-- End Counts Section -->
-
-        <!-- ======= Features Section ======= -->
-
-        <!-- End Features Section -->
 
         <!-- ======= Services Section ======= -->
         <section id="services" class="services">
@@ -205,9 +193,7 @@
                     <h2>Kontak</h2>
                     <p>Hubungi Kami</p>
                 </header>
-
                 <div class="row gy-4">
-
                     <div class="col-md-6">
                         <div class="info-box ">
                             <i class="bi bi-geo-alt"></i>
@@ -238,7 +224,6 @@
                             <p>Senin - Jumat<br />09:00 - 17:00</p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -265,7 +250,6 @@
                             intelektual lainnya.
                         </p>
                     </div>
-
                     <div class="col-lg-2 col-6 footer-links">
                         <h4>Halaman</h4>
                         <ul>
@@ -284,7 +268,6 @@
                             </li>
                         </ul>
                     </div>
-
                     <div class="col-lg-2 col-6 footer-links">
                         <h4>Layanan Kami</h4>
                         <ul>
@@ -302,7 +285,6 @@
                             </li>
                         </ul>
                     </div>
-
                     <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
                         <h4>Hubungi Kami</h4>
                         <p>
@@ -315,17 +297,10 @@
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="copyright">
                 &copy; Copyright
                 <strong><span>Sentra<b>HKI</b></span></strong>. All Rights Reserved
-            </div>
-            <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
             </div>
         </div>
     </footer>
